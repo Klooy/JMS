@@ -1,0 +1,200 @@
+.section {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  background: var(--gray-900);
+}
+
+.bgLeft {
+  position: absolute;
+  top: 0; left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  opacity: 0.6;
+}
+
+.bgRight {
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(180deg, #064e3b 0%, #065f46 100%);
+  opacity: 0.3;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  color: white;
+}
+
+.label {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.8);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 20px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.header h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.header p {
+  font-size: 1.05rem;
+  opacity: 0.7;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 440px;
+  position: relative;
+  padding: 48px 36px;
+  border-radius: 24px;
+  color: white;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.4s;
+  display: block;
+}
+
+.vigCard {
+  background: linear-gradient(160deg, rgba(15,23,42,0.9), rgba(30,58,95,0.9));
+}
+
+.jarCard {
+  background: linear-gradient(160deg, rgba(6,78,59,0.9), rgba(6,95,70,0.9));
+}
+
+.cardGlow {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.vigCard .cardGlow { background: rgba(230,57,70,0.25); }
+.jarCard .cardGlow { background: rgba(16,185,129,0.25); }
+
+.cardIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #e63946, #ff6b6b);
+  box-shadow: 0 8px 24px rgba(230,57,70,0.3);
+}
+
+.jarIconColor {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  box-shadow: 0 8px 24px rgba(16,185,129,0.3);
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.card p {
+  font-size: 0.92rem;
+  opacity: 0.75;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.cardList {
+  margin-bottom: 28px;
+}
+
+.cardList li {
+  padding: 6px 0;
+  font-size: 0.88rem;
+  opacity: 0.8;
+  padding-left: 20px;
+  position: relative;
+}
+
+.cardList li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  opacity: 0.6;
+}
+
+.cardAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ff6b6b;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.jarAction { color: #34d399; }
+
+.vsCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e63946, #10b981);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 3;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.vsCircle span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .cards { flex-direction: column; }
+  .vsCircle { order: 1; margin: -12px 0; }
+  .vigCard { order: 0; }
+  .jarCard { order: 2; }
+  .card { max-width: 100%; }
+}

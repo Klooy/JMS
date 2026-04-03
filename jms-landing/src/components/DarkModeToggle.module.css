@@ -1,0 +1,50 @@
+.toggle {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  border-radius: 50px;
+  border: 2px solid var(--gray-300);
+  background: var(--gray-100);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.dark {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+.dark .slider {
+  background: #334155;
+  color: #93c5fd;
+}
+
+.icons {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  pointer-events: none;
+}
+
+.sunIcon { color: #f59e0b; opacity: 0.5; }
+.moonIcon { color: #93c5fd; opacity: 0.5; }

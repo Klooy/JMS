@@ -1,0 +1,59 @@
+.parallax {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vigToJar {
+  background: linear-gradient(180deg, #0a0f1e 0%, #064e3b 50%, #f0fdf4 100%);
+  color: white;
+}
+
+.jarToNeutral {
+  background: linear-gradient(180deg, #f0fdf4 0%, #f9fafb 100%);
+  color: var(--gray-700);
+}
+
+.shape {
+  position: absolute;
+  pointer-events: none;
+}
+
+.s1 { top: 10%; left: 8%; }
+.s2 { top: 20%; right: 12%; }
+.s3 { bottom: 10%; left: 25%; }
+.s4 { bottom: 15%; right: 20%; }
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.line {
+  width: 60px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.3;
+}
+
+.text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .parallax { height: 160px; }
+  .text { font-size: 0.7rem; letter-spacing: 2px; }
+  .line { width: 30px; }
+}

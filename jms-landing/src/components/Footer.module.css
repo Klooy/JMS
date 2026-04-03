@@ -1,0 +1,111 @@
+.footer {
+  background: #0a0f1e;
+  color: rgba(255,255,255,0.7);
+  padding: 60px 0 30px;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.brandIcon {
+  display: flex;
+  gap: 2px;
+  background: linear-gradient(135deg, #e63946, #10b981);
+  color: white;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.brand h3 {
+  font-size: 0.95rem;
+  color: white;
+  line-height: 1.2;
+}
+
+.brand strong { color: #ff6b6b; }
+.brand span { font-size: 0.7rem; letter-spacing: 2px; opacity: 0.6; }
+
+.nit {
+  font-size: 0.82rem;
+  opacity: 0.5;
+  margin-bottom: 4px;
+}
+
+.slogan {
+  font-style: italic;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+.col h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.col ul li {
+  margin-bottom: 10px;
+}
+
+.col ul li a {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+.col ul li a:hover {
+  opacity: 1;
+  color: #ff6b6b;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+.contactItem svg { flex-shrink: 0; color: #ff6b6b; }
+
+.bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bottom p {
+  font-size: 0.8rem;
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+  .bottom { flex-direction: column; text-align: center; }
+}

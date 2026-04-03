@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --vig-primary: #0f172a;
+  --vig-secondary: #1e3a5f;
+  --vig-accent: #e63946;
+  --vig-accent-light: #ff6b6b;
+  --vig-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0ea5e9 100%);
+
+  --jar-primary: #064e3b;
+  --jar-secondary: #065f46;
+  --jar-accent: #10b981;
+  --jar-accent-light: #34d399;
+  --jar-gradient: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #34d399 100%);
+
+  --white: #ffffff;
+  --off-white: #f8fafc;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-xs: 6px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.08);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,.12);
+}
+
+/* ── Dark Mode ── */
+[data-theme="dark"] {
+  --white: #111827;
+  --off-white: #0f172a;
+  --gray-50: #1f2937;
+  --gray-100: #1f2937;
+  --gray-200: #374151;
+  --gray-300: #4b5563;
+  --gray-500: #9ca3af;
+  --gray-700: #d1d5db;
+  --gray-800: #e5e7eb;
+  --gray-900: #f1f5f9;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.3);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,.4);
+}
+
+[data-theme="dark"] body { background: #0f172a; }
+
+[data-theme="dark"] ::-webkit-scrollbar-track { background: #1f2937; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #4b5563; }
+
+/* Custom cursor – hide default on desktop when cursor active */
+@media (pointer: fine) {
+  .customCursorActive, .customCursorActive * { cursor: none !important; }
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--gray-900);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; line-height: 1.2; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { font-family: 'Montserrat', sans-serif; cursor: pointer; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--gray-100); }
+::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 4px; }
