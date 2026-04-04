@@ -1,10 +1,36 @@
+import { useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Download, FileText, ArrowRight } from 'lucide-react'
 import styles from './DownloadCTA.module.css'
 
+const portfolios = [
+  { href: '/portafolio-jms-seguridad.pdf', label: 'Seguridad Pacífico Preventiva', style: 'btnPrimary' },
+  { href: '/portafolio-jms-jardineria.pdf', label: 'Jardinería & Aseo', style: 'btnSecondary' },
+]
+
 export default function DownloadCTA() {
   const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true })
+
+  const handleDownload = useCallback((e, href) => {
+    e.preventDefault()
+    fetch(href, { method: 'HEAD' })
+      .then(res => {
+        if (res.ok) {
+          const a = document.createElement('a')
+          a.href = href
+          a.download = ''
+          document.body.appendChild(a)
+          a.click()
+          a.remove()
+        } else {
+          alert('El portafolio aún no está disponible para descarga. Contáctenos para solicitarlo.')
+        }
+      })
+      .catch(() => {
+        alert('El portafolio aún no está disponible para descarga. Contáctenos para solicitarlo.')
+      })
+  }, [])
 
   return (
     <section className={styles.section} ref={ref}>
@@ -44,26 +70,19 @@ export default function DownloadCTA() {
               <h3>Descargue nuestro portafolio completo</h3>
               <p>Conozca en detalle todos nuestros servicios, certificaciones, clientes y propuestas comerciales en un documento profesional.</p>
               <div className={styles.buttons}>
-                <motion.a
-                  href="/portafolio-jms-seguridad.pdf"
-                  download
-                  className={styles.btnPrimary}
-                  whileHover={{ scale: 1.03, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Download size={18} />
-                  Seguridad & Vigilancia
-                </motion.a>
-                <motion.a
-                  href="/portafolio-jms-jardineria.pdf"
-                  download
-                  className={styles.btnSecondary}
-                  whileHover={{ scale: 1.03, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Download size={18} />
-                  Jardinería & Aseo
-                </motion.a>
+                {portfolios.map(p => (
+                  <motion.a
+                    key={p.href}
+                    href={p.href}
+                    onClick={(e) => handleDownload(e, p.href)}
+                    className={styles[p.style]}
+                    whileHover={{ scale: 1.03, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Download size={18} />
+                    {p.label}
+                  </motion.a>
+                ))}
               </div>
               <a href="#contacto" className={styles.link}>
                 O solicite uno personalizado <ArrowRight size={14} />

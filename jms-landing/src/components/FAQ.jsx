@@ -11,11 +11,11 @@ const faqs = [
   },
   {
     q: '¿Cuál es la diferencia entre conserjería y vigilancia privada?',
-    a: 'La conserjería se enfoca en portería, recepción, mantenimiento y atención de residentes con armas no letales. La vigilancia privada incluye patrullaje activo y gestión de seguridad, regulada por la Superintendencia de Vigilancia. Nosotros somos empresa de conserjería, no de vigilancia privada.',
+    a: 'La conserjería se enfoca en portería, recepción, mantenimiento y atención de residentes dotados con elementos necesarios para prevenir el riesgo. La vigilancia privada incluye patrullaje activo y gestión de seguridad, regulada por la Superintendencia de Vigilancia. Nosotros somos empresa de conserjería, no de vigilancia privada.',
   },
   {
     q: '¿Qué incluye el servicio de conserjería 24/7?',
-    a: 'Incluye un conserje en turno diurno (12h) y otro en turno nocturno (12h), supervisión permanente, servicio de turnero, equipos de comunicación, libro de control, tonfa, arma no letal, sistema de control satelital y comunicación directa con la red de apoyo.',
+    a: 'Incluye supervisión permanente, servicio de turnero, equipos de comunicación, libro de control, elementos necesarios para prevenir el riesgo, sistema de control satelital y comunicación directa con la red de apoyo.',
   },
   {
     q: '¿Cuentan con póliza de seguro?',
@@ -82,6 +82,7 @@ function FAQItem({ faq, index, isOpen, toggle }) {
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null)
+  const [sectionOpen, setSectionOpen] = useState(false)
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
@@ -98,17 +99,43 @@ export default function FAQ() {
           <p>Resolvemos las dudas más comunes sobre nuestros servicios</p>
         </motion.div>
 
-        <div className={styles.list}>
-          {faqs.map((faq, i) => (
-            <FAQItem
-              key={i}
-              faq={faq}
-              index={i}
-              isOpen={openIndex === i}
-              toggle={() => setOpenIndex(openIndex === i ? null : i)}
-            />
-          ))}
-        </div>
+        <button
+          className={`${styles.toggleBtn} ${sectionOpen ? styles.toggleOpen : ''}`}
+          onClick={() => setSectionOpen(!sectionOpen)}
+          aria-expanded={sectionOpen}
+        >
+          <span>{sectionOpen ? 'Ocultar preguntas' : `Ver ${faqs.length} preguntas frecuentes`}</span>
+          <motion.div
+            animate={{ rotate: sectionOpen ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ChevronDown size={20} />
+          </motion.div>
+        </button>
+
+        <AnimatePresence>
+          {sectionOpen && (
+            <motion.div
+              className={styles.listWrapper}
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
+            >
+              <div className={styles.list}>
+                {faqs.map((faq, i) => (
+                  <FAQItem
+                    key={i}
+                    faq={faq}
+                    index={i}
+                    isOpen={openIndex === i}
+                    toggle={() => setOpenIndex(openIndex === i ? null : i)}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   )

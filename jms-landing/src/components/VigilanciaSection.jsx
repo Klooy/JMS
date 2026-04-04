@@ -6,8 +6,8 @@ import ThemeContext from '../context/ThemeContext'
 import styles from './VigilanciaSection.module.css'
 
 const services = [
-  { icon: <Shield size={28} />, title: 'Conserjería Física 24/7', desc: 'Turnos diurnos y nocturnos de 12 horas con personal capacitado en administración de riesgos, dotados con armas no letales.' },
-  { icon: <Video size={28} />, title: 'CCTV & Cámaras', desc: 'Última tecnología en sistemas de seguridad incluyendo cámaras y grabadoras digitales (DVR) con monitoreo remoto 24h.' },
+  { icon: <Shield size={28} />, title: 'Conserjería Física 24/7', desc: 'Personal capacitado en administración de riesgos, dotados con elementos necesarios para prevenir el riesgo.' },
+  { icon: <Video size={28} />, title: 'CCTV & Cámaras', desc: 'Última tecnología en electrónica incluyendo cámaras y grabadoras digitales (DVR) con monitoreo remoto 24h.' },
   { icon: <Bell size={28} />, title: 'Sistema de Alarmas', desc: 'Instalación y monitoreo de sistemas de alarmas para protección integral de instalaciones.' },
   { icon: <Zap size={28} />, title: 'Cercas Eléctricas', desc: 'Seguridad perimetral con cercas eléctricas para la protección integral de su propiedad.' },
   { icon: <Fingerprint size={28} />, title: 'Control Biométrico', desc: 'Control de acceso y asistencia con tecnología biométrica de última generación.' },
@@ -19,7 +19,7 @@ const includes = [
   'Servicio de turnero',
   'Equipos de comunicación',
   'Libro de control de apuntes y novedades',
-  'Tonfa y arma no letal',
+  'Elementos necesarios para prevenir el riesgo',
   'Comunicación directa con red de apoyo',
 ]
 
@@ -51,7 +51,7 @@ export default function VigilanciaSection() {
           <div className={styles.iconBadge}>
             <Shield size={24} />
           </div>
-          <h2>Seguridad & Vigilancia</h2>
+          <h2>Seguridad Pacífico Preventiva</h2>
           <p>Servicio de seguridad prestado con porteros conserjes capacitados en administración de riesgos, con énfasis en manejo y atención del personal de las instalaciones custodiadas.</p>
         </motion.div>
 

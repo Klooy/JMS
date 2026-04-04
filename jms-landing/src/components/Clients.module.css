@@ -82,3 +82,55 @@
 [data-theme="dark"] .section { background: #0f172a; }
 [data-theme="dark"] .card { background: #1f2937; border-color: #374151; }
 [data-theme="dark"] .card:hover { border-color: #e63946; background: #1e3a5f; }
+
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 24px;
+  padding: 14px 28px;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toggleBtn:hover {
+  background: var(--gray-200);
+  border-color: #e63946;
+  color: #e63946;
+}
+
+.toggleOpen {
+  background: rgba(230,57,70,0.06);
+  border-color: #e63946;
+  color: #e63946;
+}
+
+[data-theme="dark"] .toggleBtn {
+  background: #1f2937;
+  border-color: #374151;
+  color: #94a3b8;
+}
+[data-theme="dark"] .toggleBtn:hover {
+  background: #2d3748;
+  border-color: #e63946;
+  color: #e63946;
+}
+[data-theme="dark"] .toggleOpen {
+  background: rgba(230,57,70,0.1);
+  border-color: #e63946;
+  color: #e63946;
+}
+
+.gridWrapper {
+  overflow: hidden;
+}

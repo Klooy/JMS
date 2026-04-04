@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion'
+import { useState, useEffect, useCallback } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ShieldCheck, HardHat, Landmark, Handshake } from 'lucide-react'
+import { ShieldCheck, HardHat, Landmark, Handshake, ChevronLeft, ChevronRight } from 'lucide-react'
 import styles from './Certifications.module.css'
 
 const certs = [
@@ -32,6 +33,26 @@ const certs = [
 
 export default function Certifications() {
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true })
+  const [current, setCurrent] = useState(0)
+  const [direction, setDirection] = useState(0)
+
+  const paginate = useCallback((dir) => {
+    setDirection(dir)
+    setCurrent(prev => (prev + dir + certs.length) % certs.length)
+  }, [])
+
+  useEffect(() => {
+    const timer = setInterval(() => paginate(1) , 5000)
+    return () => clearInterval(timer)
+  }, [paginate])
+
+  const variants = {
+    enter: (dir) => ({ x: dir > 0 ? 200 : -200, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir) => ({ x: dir > 0 ? -200 : 200, opacity: 0 }),
+  }
+
+  const c = certs[current]
 
   return (
     <section className={styles.section} ref={ref}>
@@ -46,23 +67,46 @@ export default function Certifications() {
           <h2>Garantías que nos respaldan</h2>
         </motion.div>
 
-        <div className={styles.grid}>
-          {certs.map((c, i) => (
-            <motion.div
-              key={c.title}
-              className={styles.card}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.12 }}
-              whileHover={{ y: -6 }}
-            >
-              <div className={styles.cardIcon} style={{ background: `${c.color}15`, color: c.color }}>
-                {c.icon}
-              </div>
-              <h4>{c.title}</h4>
-              <p>{c.desc}</p>
-              <div className={styles.cardAccent} style={{ background: c.color }} />
-            </motion.div>
+        <div className={styles.carousel}>
+          <button className={styles.navBtn} onClick={() => paginate(-1)} aria-label="Anterior">
+            <ChevronLeft size={22} />
+          </button>
+
+          <div className={styles.slideContainer}>
+            <AnimatePresence initial={false} custom={direction} mode="wait">
+              <motion.div
+                key={current}
+                className={styles.card}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.35, ease: 'easeInOut' }}
+              >
+                <div className={styles.cardIcon} style={{ background: `${c.color}15`, color: c.color }}>
+                  {c.icon}
+                </div>
+                <h4>{c.title}</h4>
+                <p>{c.desc}</p>
+                <div className={styles.cardAccent} style={{ background: c.color }} />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <button className={styles.navBtn} onClick={() => paginate(1)} aria-label="Siguiente">
+            <ChevronRight size={22} />
+          </button>
+        </div>
+
+        <div className={styles.dots}>
+          {certs.map((_, i) => (
+            <button
+              key={i}
+              className={`${styles.dot} ${i === current ? styles.dotActive : ''}`}
+              onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i) }}
+              aria-label={`Ir a certificación ${i + 1}`}
+            />
           ))}
         </div>
       </div>

@@ -40,7 +40,7 @@ export default function ServiceDivider() {
             <div className={styles.cardIcon}>
               <Shield size={40} />
             </div>
-            <h3>Seguridad &<br/>Vigilancia</h3>
+            <h3>Seguridad Pacífico<br/>Preventiva</h3>
             <p>Conserjería física 24/7, CCTV, alarmas, cercas eléctricas, control biométrico y más.</p>
             <ul className={styles.cardList}>
               <li>Conserjería Física</li>

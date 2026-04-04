@@ -74,7 +74,7 @@ export default function Hero() {
               <Shield size={28} />
             </div>
             <div>
-              <h3>Seguridad & Vigilancia</h3>
+              <h3>Seguridad Pacífico Preventiva</h3>
               <p>Conserjería física, CCTV, alarmas y más</p>
             </div>
           </a>
