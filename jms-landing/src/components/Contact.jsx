@@ -82,6 +82,7 @@ export default function Contact() {
                 <h4>Teléfonos</h4>
                 <p>607 548 9078</p>
                 <p>314 331 1791</p>
+                <p>312 400 7489</p>
               </div>
             </div>
 

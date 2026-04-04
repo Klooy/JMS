@@ -24,12 +24,10 @@
   margin-bottom: 12px;
 }
 
-.brandIcon {
-  display: flex;
-  gap: 2px;
-  background: linear-gradient(135deg, #e63946, #10b981);
-  color: white;
-  padding: 6px 8px;
+.brandLogo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
   border-radius: 8px;
 }
 

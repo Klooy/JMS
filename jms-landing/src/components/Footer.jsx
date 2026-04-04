@@ -1,4 +1,4 @@
-import { Shield, Leaf, Phone, Mail, MapPin } from 'lucide-react'
+import { Phone, Mail, MapPin } from 'lucide-react'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -8,10 +8,7 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.col}>
             <div className={styles.brand}>
-              <div className={styles.brandIcon}>
-                <Shield size={16} />
-                <Leaf size={16} />
-              </div>
+              <img src="/logo.png" alt="Conserjería JMS S.A.S." className={styles.brandLogo} />
               <div>
                 <h3>CONSERJERÍA <strong>JMS</strong></h3>
                 <span>S.A.S.</span>
@@ -46,6 +43,7 @@ export default function Footer() {
             <ul>
               <li className={styles.contactItem}><Phone size={14} /> 607 548 9078</li>
               <li className={styles.contactItem}><Phone size={14} /> 314 331 1791</li>
+              <li className={styles.contactItem}><Phone size={14} /> 312 400 7489</li>
               <li className={styles.contactItem}><Mail size={14} /> contabilidadjmse@gmail.com</li>
               <li className={styles.contactItem}><MapPin size={14} /> Cúcuta, Norte de Santander</li>
             </ul>

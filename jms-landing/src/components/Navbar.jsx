@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Shield, Leaf, Menu, X, Phone } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 import ThemeContext from '../context/ThemeContext'
 import DarkModeToggle from './DarkModeToggle'
 import MagneticWrap from './MagneticWrap'
@@ -40,10 +40,7 @@ export default function Navbar() {
     >
       <div className={styles.container}>
         <a href="#inicio" className={styles.logo}>
-          <div className={styles.logoIcon}>
-            <Shield size={18} />
-            <Leaf size={18} />
-          </div>
+          <img src="/logo.png" alt="Conserjería JMS S.A.S." className={styles.logoImg} />
           <div className={styles.logoText}>
             <span className={styles.logoName}>CONSERJERÍA <strong>JMS</strong></span>
             <span className={styles.logoSub}>S.A.S.</span>

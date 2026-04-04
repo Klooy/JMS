@@ -48,13 +48,10 @@
   z-index: 10;
 }
 
-.logoIcon {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  background: linear-gradient(135deg, #e63946, #10b981);
-  color: white;
-  padding: 6px 8px;
+.logoImg {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
   border-radius: 8px;
 }
 
