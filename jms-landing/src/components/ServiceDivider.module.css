@@ -91,6 +91,15 @@
   background: linear-gradient(160deg, rgba(15,23,42,0.9), rgba(30,58,95,0.9));
 }
 
+.cardBg {
+  position: absolute;
+  inset: 0;
+  background: url('/img1.webp') center / cover no-repeat;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .jarCard {
   background: linear-gradient(160deg, rgba(6,78,59,0.9), rgba(6,95,70,0.9));
 }

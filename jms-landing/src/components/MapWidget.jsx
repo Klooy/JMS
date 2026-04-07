@@ -53,7 +53,7 @@ export default function MapWidget() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Ubicación Conserjería JMS"
+                  title="Ubicación JMS"
                   onLoad={() => setMapLoaded(true)}
                   style={{ opacity: mapLoaded ? 1 : 0 }}
                 />

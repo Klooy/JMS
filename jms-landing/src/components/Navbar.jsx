@@ -40,9 +40,9 @@ export default function Navbar() {
     >
       <div className={styles.container}>
         <a href="#inicio" className={styles.logo}>
-          <img src="/logo.png" alt="Conserjería JMS S.A.S." className={styles.logoImg} />
+          <img src="/logo.png" alt="JMS S.A.S." className={styles.logoImg} />
           <div className={styles.logoText}>
-            <span className={styles.logoName}>CONSERJERÍA <strong>JMS</strong></span>
+            <span className={styles.logoName}><strong>JMS</strong></span>
             <span className={styles.logoSub}>S.A.S.</span>
           </div>
         </a>

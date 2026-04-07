@@ -8,9 +8,9 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.col}>
             <div className={styles.brand}>
-              <img src="/logo.png" alt="Conserjería JMS S.A.S." className={styles.brandLogo} />
+              <img src="/logo.png" alt="JMS S.A.S." className={styles.brandLogo} />
               <div>
-                <h3>CONSERJERÍA <strong>JMS</strong></h3>
+                <h3><strong>JMS</strong></h3>
                 <span>S.A.S.</span>
               </div>
             </div>
@@ -21,8 +21,8 @@ export default function Footer() {
           <div className={styles.col}>
             <h4>Servicios</h4>
             <ul>
-              <li><a href="#vigilancia">Seguridad & Conserjería</a></li>
-              <li><a href="#jardineria">Aseo & Limpieza</a></li>
+              <li><a href="#vigilancia">Seguridad</a></li>
+              <li><a href="#jardineria">Aseo</a></li>
               <li><a href="#jardineria">Jardinería & Paisajismo</a></li>
               <li><a href="#jardineria">Mantenimiento Integral</a></li>
             </ul>
@@ -51,8 +51,8 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>&copy; {new Date().getFullYear()} Conserjería JMS S.A.S. Todos los derechos reservados.</p>
-          <p>Ciro Alfonso Soto Rozo — Representante Legal</p>
+          <p>&copy; {new Date().getFullYear()} JMS S.A.S. Todos los derechos reservados.</p>
+          <p>Alfonso Soto — Representante Legal</p>
         </div>
       </div>
     </footer>

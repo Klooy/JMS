@@ -6,15 +6,15 @@ import styles from './FAQ.module.css'
 
 const faqs = [
   {
-    q: '¿Qué tipo de empresa es Conserjería JMS?',
-    a: 'Somos una empresa especializada en servicios de conserjería, seguridad física, aseo, limpieza, jardinería y paisajismo. Estamos agremiados a FENALPORTEC y contamos con certificado de existencia de la Cámara de Comercio de Cúcuta.',
+    q: '¿Qué tipo de empresa es JMS?',
+    a: 'Somos una empresa especializada en servicios de seguridad física, aseo, jardinería y paisajismo. Contamos con certificado de existencia de la Cámara de Comercio de Cúcuta.',
   },
   {
-    q: '¿Cuál es la diferencia entre conserjería y vigilancia privada?',
-    a: 'La conserjería se enfoca en portería, recepción, mantenimiento y atención de residentes dotados con elementos necesarios para prevenir el riesgo. La vigilancia privada incluye patrullaje activo y gestión de seguridad, regulada por la Superintendencia de Vigilancia. Nosotros somos empresa de conserjería, no de vigilancia privada.',
+    q: '¿Qué tipo de seguridad ofrecen?',
+    a: 'Nos enfocamos en portería, recepción, mantenimiento y atención de residentes, dotados con elementos necesarios para prevenir el riesgo. No somos empresa de vigilancia privada.',
   },
   {
-    q: '¿Qué incluye el servicio de conserjería 24/7?',
+    q: '¿Qué incluye el servicio de seguridad 24/7?',
     a: 'Incluye supervisión permanente, servicio de turnero, equipos de comunicación, libro de control, elementos necesarios para prevenir el riesgo, sistema de control satelital y comunicación directa con la red de apoyo.',
   },
   {
@@ -22,7 +22,7 @@ const faqs = [
     a: 'Sí, contamos con una póliza de responsabilidad civil extracontractual vigente No. B-250008780 de la compañía Seguros Mundial, por un valor asegurado de $250.000.000 COP, que cubre daños a terceros, hurtos y demás situaciones derivadas del servicio.',
   },
   {
-    q: '¿Qué servicios de aseo y limpieza ofrecen?',
+    q: '¿Qué servicios de aseo ofrecen?',
     a: 'Ofrecemos limpieza de edificios, centros comerciales, limpieza industrial, hospitalaria, instituciones educativas, hoteles y restaurantes, limpieza de obra, lavado de fachadas, desinfección de áreas críticas y más.',
   },
   {

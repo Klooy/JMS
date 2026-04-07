@@ -5,8 +5,8 @@ import { Mail, Phone, MapPin, User, Send, MessageSquare, CheckCircle, Loader2 } 
 import styles from './Contact.module.css'
 
 const serviceOptions = [
-  { group: 'Seguridad Pacífico Preventiva', items: ['Conserjería Física 24/7', 'CCTV - Cámaras', 'Sistema de Alarmas', 'Cercas Eléctricas', 'Control Biométrico'] },
-  { group: 'Jardinería & Aseo', items: ['Aseo y Limpieza', 'Jardinería y Paisajismo', 'Mantenimiento de Piscinas', 'Servicio de Todero', 'Fumigación'] },
+  { group: 'Seguridad Pacífico Preventiva', items: ['Seguridad Física 24/7', 'CCTV - Cámaras', 'Sistema de Alarmas', 'Cercas Eléctricas', 'Control Biométrico'] },
+  { group: 'Jardinería & Aseo', items: ['Aseo', 'Jardinería y Paisajismo', 'Mantenimiento de Piscinas', 'Servicio de Todero', 'Fumigación'] },
 ]
 
 export default function Contact() {
@@ -72,7 +72,7 @@ export default function Contact() {
               <div className={styles.contactIcon}><User size={22} /></div>
               <div>
                 <h4>Representante Legal</h4>
-                <p>Ciro Alfonso Soto Rozo</p>
+                <p>Alfonso Soto</p>
               </div>
             </div>
 

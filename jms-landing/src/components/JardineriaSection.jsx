@@ -1,7 +1,7 @@
-import { useContext, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { useContext, useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Leaf, Scissors, TreePine, Sprout, FlaskConical, PencilRuler, Waves, PersonStanding, Wrench, SprayCan, Building2, Factory, GraduationCap, Hotel, HardHat, Sparkles } from 'lucide-react'
+import { Leaf, Scissors, TreePine, Sprout, FlaskConical, PencilRuler, Waves, PersonStanding, Wrench, SprayCan, Building2, Factory, GraduationCap, Hotel, HardHat, Sparkles, Play, ChevronDown } from 'lucide-react'
 import ThemeContext from '../context/ThemeContext'
 import styles from './JardineriaSection.module.css'
 
@@ -29,6 +29,7 @@ export default function JardineriaSection() {
   const { setActiveTheme } = useContext(ThemeContext)
   const [ref, inView] = useInView({ threshold: 0.1 })
   const [headerRef, headerInView] = useInView({ threshold: 0.3, triggerOnce: true })
+  const [videoOpen, setVideoOpen] = useState(false)
 
   useEffect(() => {
     if (inView) setActiveTheme('jardineria')
@@ -55,6 +56,49 @@ export default function JardineriaSection() {
           <p>Personal especializado y entrenado para brindar limpieza, mantenimiento y paisajismo con los más altos estándares de calidad.</p>
         </motion.div>
 
+        {/* Video desplegable */}
+        <motion.div
+          className={styles.videoSection}
+          initial={{ opacity: 0, y: 20 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <button
+            className={`${styles.videoToggle} ${videoOpen ? styles.videoToggleOpen : ''}`}
+            onClick={() => setVideoOpen(!videoOpen)}
+          >
+            <Play size={18} />
+            <span>{videoOpen ? 'Ocultar video' : '¿Es legal la conserjería? — Ver video explicativo'}</span>
+            <motion.div
+              animate={{ rotate: videoOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ChevronDown size={18} />
+            </motion.div>
+          </button>
+          <AnimatePresence>
+            {videoOpen && (
+              <motion.div
+                className={styles.videoWrapper}
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
+              >
+                <video
+                  className={styles.video}
+                  controls
+                  preload="metadata"
+                  playsInline
+                >
+                  <source src="/vid1.mp4" type="video/mp4" />
+                  Tu navegador no soporta video.
+                </video>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+
         {/* Aseo Section */}
         <motion.div
           className={styles.subHeader}
@@ -63,7 +107,7 @@ export default function JardineriaSection() {
           viewport={{ once: true }}
         >
           <SprayCan size={20} />
-          <h3>Aseo y Limpieza Especializada</h3>
+          <h3>Aseo Especializado</h3>
         </motion.div>
 
         <div className={styles.grid}>

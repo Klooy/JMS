@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ShieldCheck, HardHat, Landmark, Handshake, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ShieldCheck, HardHat, Landmark, ChevronLeft, ChevronRight } from 'lucide-react'
 import styles from './Certifications.module.css'
 
 const certs = [
@@ -23,12 +23,7 @@ const certs = [
     desc: 'Certificado de existencia y representación legal. Matrícula No. 470232.',
     color: '#0ea5e9',
   },
-  {
-    icon: <Handshake size={32} />,
-    title: 'FENALPORTEC',
-    desc: 'Empresa agremiada a la Federación Nacional de Porterías, Conserjerías y Afines.',
-    color: '#10b981',
-  },
+
 ]
 
 export default function Certifications() {

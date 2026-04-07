@@ -49,7 +49,6 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.7 }}
         >
-          CONSERJERÍA{' '}
           <span className={styles.highlight}>JMS</span>{' '}
           S.A.S.
         </motion.h1>
@@ -75,7 +74,7 @@ export default function Hero() {
             </div>
             <div>
               <h3>Seguridad Pacífico Preventiva</h3>
-              <p>Conserjería física, CCTV, alarmas y más</p>
+              <p>Seguridad física, CCTV, alarmas y más</p>
             </div>
           </a>
           <a href="#jardineria" className={styles.pillar}>

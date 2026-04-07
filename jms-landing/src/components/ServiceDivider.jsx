@@ -37,13 +37,14 @@ export default function ServiceDivider() {
             onMouseLeave={() => setActiveTheme('neutral')}
           >
             <div className={styles.cardGlow} />
+            <div className={styles.cardBg} />
             <div className={styles.cardIcon}>
               <Shield size={40} />
             </div>
             <h3>Seguridad Pacífico<br/>Preventiva</h3>
-            <p>Conserjería física 24/7, CCTV, alarmas, cercas eléctricas, control biométrico y más.</p>
+            <p>Seguridad física 24/7, CCTV, alarmas, cercas eléctricas, control biométrico y más.</p>
             <ul className={styles.cardList}>
-              <li>Conserjería Física</li>
+              <li>Seguridad Física</li>
               <li>Medios Tecnológicos</li>
               <li>Control de Acceso</li>
               <li>Supervisión Permanente</li>
@@ -79,7 +80,7 @@ export default function ServiceDivider() {
             <h3>Jardinería,<br/>Aseo & Más</h3>
             <p>Paisajismo, limpieza especializada, mantenimiento de piscinas, fumigación y todero.</p>
             <ul className={styles.cardList}>
-              <li>Aseo y Limpieza</li>
+              <li>Aseo</li>
               <li>Jardinería y Paisajismo</li>
               <li>Mantenimiento Integral</li>
               <li>Servicio de Todero</li>

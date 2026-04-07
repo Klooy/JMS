@@ -6,7 +6,7 @@ import ThemeContext from '../context/ThemeContext'
 import styles from './VigilanciaSection.module.css'
 
 const services = [
-  { icon: <Shield size={28} />, title: 'Conserjería Física 24/7', desc: 'Personal capacitado en administración de riesgos, dotados con elementos necesarios para prevenir el riesgo.' },
+  { icon: <Shield size={28} />, title: 'Seguridad Física 24/7', desc: 'Personal capacitado en administración de riesgos, dotados con elementos necesarios para prevenir el riesgo.' },
   { icon: <Video size={28} />, title: 'CCTV & Cámaras', desc: 'Última tecnología en electrónica incluyendo cámaras y grabadoras digitales (DVR) con monitoreo remoto 24h.' },
   { icon: <Bell size={28} />, title: 'Sistema de Alarmas', desc: 'Instalación y monitoreo de sistemas de alarmas para protección integral de instalaciones.' },
   { icon: <Zap size={28} />, title: 'Cercas Eléctricas', desc: 'Seguridad perimetral con cercas eléctricas para la protección integral de su propiedad.' },
@@ -52,7 +52,7 @@ export default function VigilanciaSection() {
             <Shield size={24} />
           </div>
           <h2>Seguridad Pacífico Preventiva</h2>
-          <p>Servicio de seguridad prestado con porteros conserjes capacitados en administración de riesgos, con énfasis en manejo y atención del personal de las instalaciones custodiadas.</p>
+          <p>Servicio de seguridad prestado con personal capacitado en administración de riesgos, con énfasis en manejo y atención del personal de las instalaciones custodiadas.</p>
         </motion.div>
 
         <div className={styles.grid}>
@@ -83,7 +83,7 @@ export default function VigilanciaSection() {
         >
           <div className={styles.includesHeader}>
             <ClipboardList size={20} />
-            <h4>El servicio de conserjería incluye:</h4>
+            <h4>El servicio incluye:</h4>
           </div>
           <div className={styles.includesGrid}>
             {includes.map((item) => (

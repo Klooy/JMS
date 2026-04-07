@@ -45,6 +45,72 @@
   color: var(--gray-500);
 }
 
+/* Video collapsible */
+.videoSection {
+  margin-bottom: 28px;
+}
+
+.videoToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, rgba(230,57,70,0.06), rgba(14,165,233,0.06));
+  border: 1px solid rgba(230,57,70,0.2);
+  border-radius: 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #e63946;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.videoToggle:hover {
+  background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(14,165,233,0.12));
+  border-color: #e63946;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(230,57,70,0.12);
+}
+
+.videoToggleOpen {
+  border-color: #e63946;
+  background: rgba(230,57,70,0.08);
+}
+
+[data-theme="dark"] .videoToggle {
+  background: rgba(230,57,70,0.08);
+  border-color: rgba(230,57,70,0.2);
+  color: #ff6b6b;
+}
+[data-theme="dark"] .videoToggle:hover {
+  background: rgba(230,57,70,0.15);
+  border-color: #ff6b6b;
+}
+
+.videoWrapper {
+  overflow: hidden;
+  margin-top: 16px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video {
+  width: 100%;
+  border-radius: 16px;
+  background: #000;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+[data-theme="dark"] .video {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
 .toggleBtn {
   display: flex;
   align-items: center;
