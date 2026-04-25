@@ -56,48 +56,7 @@ export default function JardineriaSection() {
           <p>Personal especializado y entrenado para brindar limpieza, mantenimiento y paisajismo con los más altos estándares de calidad.</p>
         </motion.div>
 
-        {/* Video desplegable */}
-        <motion.div
-          className={styles.videoSection}
-          initial={{ opacity: 0, y: 20 }}
-          animate={headerInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <button
-            className={`${styles.videoToggle} ${videoOpen ? styles.videoToggleOpen : ''}`}
-            onClick={() => setVideoOpen(!videoOpen)}
-          >
-            <Play size={18} />
-            <span>{videoOpen ? 'Ocultar video' : '¿Es legal la conserjería? — Ver video explicativo'}</span>
-            <motion.div
-              animate={{ rotate: videoOpen ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <ChevronDown size={18} />
-            </motion.div>
-          </button>
-          <AnimatePresence>
-            {videoOpen && (
-              <motion.div
-                className={styles.videoWrapper}
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.4, ease: 'easeInOut' }}
-              >
-                <video
-                  className={styles.video}
-                  controls
-                  preload="metadata"
-                  playsInline
-                >
-                  <source src="/vid1.mp4" type="video/mp4" />
-                  Tu navegador no soporta video.
-                </video>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
+        {/* Video desplegable — oculto temporalmente, se refinará después */}
 
         {/* Aseo Section */}
         <motion.div

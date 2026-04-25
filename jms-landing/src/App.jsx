@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import ImageCarousel from './components/ImageCarousel'
 import ServiceDivider from './components/ServiceDivider'
 import VigilanciaSection from './components/VigilanciaSection'
 import ParallaxDivider from './components/ParallaxDivider'
@@ -40,6 +41,7 @@ export default function App() {
         <Navbar />
         <Hero />
         <About />
+        <ImageCarousel />
         <ServiceDivider />
         <VigilanciaSection />
         <ParallaxDivider variant="vig-to-jar" />

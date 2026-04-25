@@ -5,8 +5,8 @@ import { Download, FileText, ArrowRight } from 'lucide-react'
 import styles from './DownloadCTA.module.css'
 
 const portfolios = [
-  { href: '/portafolio-jms-seguridad.pdf', label: 'Seguridad Pacífico Preventiva', style: 'btnPrimary' },
-  { href: '/portafolio-jms-jardineria.pdf', label: 'Jardinería & Aseo', style: 'btnSecondary' },
+  { href: '/PORTAFOLIO  ALCAMAR CAMPRESTRE CONSERJERIA.pdf', label: 'Seguridad Pacífico Preventiva', style: 'btnPrimary' },
+  { href: '/PORTAFOLIO DE SERVICIO  ALCAMAR CAMPESTRE TODERO.pdf', label: 'Jardinería & Aseo', style: 'btnSecondary' },
 ]
 
 export default function DownloadCTA() {
