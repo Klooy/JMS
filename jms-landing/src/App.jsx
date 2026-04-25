@@ -8,7 +8,7 @@ import VigilanciaSection from './components/VigilanciaSection'
 import ParallaxDivider from './components/ParallaxDivider'
 import JardineriaSection from './components/JardineriaSection'
 import DownloadCTA from './components/DownloadCTA'
-import Clients from './components/Clients'
+// import Clients from './components/Clients'  // oculto temporalmente
 import Certifications from './components/Certifications'
 import FAQ from './components/FAQ'
 import MapWidget from './components/MapWidget'
@@ -47,7 +47,7 @@ export default function App() {
         <ParallaxDivider variant="vig-to-jar" />
         <JardineriaSection />
         <DownloadCTA />
-        <Clients />
+        {/* <Clients /> — oculto temporalmente */}
         <Certifications />
         <FAQ />
         <MapWidget />
